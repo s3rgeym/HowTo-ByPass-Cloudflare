@@ -48,8 +48,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 UPD:
 
 ```python
->>> matches=re.findall(r'(?:east|west)=([^,]+)', r.text)
->>> subprocess.check_output(['node', '-e', 'console.log(' + ' + '.join(matches)  + ')'], text=True)
+>>> west, east = re.findall(r'(?:west|east)=([^,]+)', r.text)
+>>> subprocess.check_output(['node', '-e', f'console.log({west} + {east})'], text=True)
 '15093395\n'
 >>>
 ```
